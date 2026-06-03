@@ -25,15 +25,41 @@ To write a Python program to create a class `Student` with the private members `
 
 ### PROGRAM
 
-```
+```python
 
+class Student:
+    def __init__(self, name, roll_no, age):
+        self.name = name
+        self.__roll_no = roll_no
+        self.__age = age
 
+    def show(self):
+        print('Student Details:', self.name, self.__roll_no)
+
+    def get_roll_no(self):
+        return self.__roll_no
+
+    def set_roll_no(self, number):
+        if number > 50:
+            print('Invalid roll no. Please set correct roll number')
+        else:
+            self.__roll_no = number
+
+# Creating an object
+jessa = Student('Jessa', 10, 15)
+jessa.show()
+
+# Trying to update roll number
+jessa.set_roll_no(52)  # Invalid
+jessa.set_roll_no(25)  # Valid
+
+# Display updated details
+jessa.show()
 
 ```
 
 ### OUTPUT
-
+![image](https://github.com/user-attachments/assets/a3ccc1a5-6560-4f6b-aa1f-8de2bfd2337b)
 
 ### RESULT
-
-
+Thus the program to create class with private members and add getter and setter methods to initialize and modify the given variable has been implemented and executed successfully.
